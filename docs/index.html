@@ -282,7 +282,7 @@ function renderChart(mode, year) {
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.innerHTML = "";
 
-  const margin = { left: 44, right: 10, top: 12, bottom: 34 };
+  const margin = { left: 44, right: 10, top: 12, bottom: 40 };
   const plotW = width - margin.left - margin.right;
   const plotH = height - margin.top - margin.bottom;
 
@@ -311,7 +311,15 @@ function renderChart(mode, year) {
 
     if (startMonth === "01" && startYear % 2 === 0) {
       svg.appendChild(el("line", { x1: margin.left + i * groupW, y1: margin.top, x2: margin.left + i * groupW, y2: height - margin.bottom, class: "yearline" }));
-      svg.appendChild(el("text", { x: margin.left + i * groupW + 2, y: height - 12, class: "axis-label" }, String(startYear)));
+      const labelX = margin.left + i * groupW + 4;
+      const labelY = height - 24;
+      svg.appendChild(el("text", {
+        x: labelX,
+        y: labelY,
+        class: "axis-label",
+        "text-anchor": "end",
+        transform: `rotate(-45 ${labelX} ${labelY})`
+      }, String(startYear)));
     }
 
     drawBar(svg, gx, zeroY, y(r.nasdaq100), barW, colors.nas, `${r.start} → ${r.end}\nNASDAQ-100: ${r.nasdaq100}%`);
