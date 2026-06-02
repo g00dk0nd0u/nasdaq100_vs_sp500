@@ -88,8 +88,9 @@ h2 {
   font-size: 19px;
 }
 .stats {
-  color: var(--muted);
+  color: var(--ink);
   font-size: 12px;
+  font-weight: 700;
   white-space: nowrap;
 }
 .legend {
@@ -270,9 +271,12 @@ function renderChart(mode, year) {
   });
 
   const diffs = rows.map(r => r.nasdaq100 - r.sp500);
-  const wins = diffs.filter(d => d > 0).length;
+  const nasWins = diffs.filter(d => d > 0).length;
+  const spWins = diffs.filter(d => d < 0).length;
+  const ties = rows.length - nasWins - spWins;
+  const tieText = ties > 0 ? ` | Ties: ${ties}` : "";
   document.getElementById(`stats-${mode}-${year}`).textContent =
-    `${rows.length} quarterly starts | NASDAQ-100 wins: ${wins} | Difference: min ${Math.min(...diffs).toFixed(1)}pp / max ${Math.max(...diffs).toFixed(1)}pp`;
+    `NASDAQ-100: ${nasWins} wins | S&P 500: ${spWins} wins${tieText} | Total: ${rows.length}`;
 }
 
 function renderAll() {
