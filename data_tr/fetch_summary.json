@@ -1,0 +1,21 @@
+{
+  "generated_at_utc": "2026-06-02T22:59:22.955021+00:00",
+  "nasdaq_xndx": {
+    "raw_xlsx": "data_tr/nasdaq_xndx_total_return_raw_official.xlsx",
+    "raw_json": "data_tr/nasdaq_xndx_total_return_raw_official_historydata.json",
+    "monthly_csv": "data_tr/NASDAQ100_TR_monthly_official_XNDX.csv",
+    "daily_rows": 6853,
+    "monthly_rows": 327,
+    "first_month": "1999-03",
+    "last_month": "2026-05",
+    "note": "Official Nasdaq GIW public export. Requested from 1985-01-01, but returned history starts at the first public XNDX row available from the endpoint."
+  },
+  "sp500tr": {
+    "raw_json": "data_tr/sp500_total_return_raw_yahoo_SP500TR.json",
+    "monthly_csv": "data_tr/SP500_TR_monthly_yahoo_SP500TR.csv",
+    "monthly_rows": 462,
+    "first_month": "1988-01",
+    "last_month": "2026-06",
+    "note": "Yahoo Finance chart API secondary distribution. Direct S&P DJI public historical API was not identified in this run. The current partial month may be present; exclude it for month-end-only analysis."
+  }
+}
