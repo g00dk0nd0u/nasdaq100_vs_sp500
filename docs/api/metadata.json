@@ -1,0 +1,82 @@
+{
+  "dataset_id": "nasdaq100_vs_sp500_quarterly_start_comparison",
+  "name": "NASDAQ-100 vs S&P 500 Quarterly Start Comparison",
+  "description": "Historical comparison of NASDAQ-100 and S&P 500 returns by quarterly start month for lump-sum and monthly investing horizons.",
+  "site_path": "/",
+  "llm_index_path": "/llms.txt",
+  "generated_for_site": true,
+  "investment_modes": [
+    {
+      "id": "lump_sum",
+      "label": "Lump-Sum Investing",
+      "description": "Invest the full amount at the start month and hold for the selected horizon."
+    },
+    {
+      "id": "monthly",
+      "label": "Monthly Investing",
+      "description": "Invest the same amount every month from the start month through the month before the end date."
+    }
+  ],
+  "return_types": [
+    {
+      "id": "price",
+      "label": "Price Return",
+      "description": "Index price return, excluding dividends."
+    },
+    {
+      "id": "total_return",
+      "label": "Total Return",
+      "description": "Total-return index data, including dividends where source data is available."
+    }
+  ],
+  "period_years": [
+    10,
+    15,
+    20,
+    25
+  ],
+  "start_month_frequency": "quarterly",
+  "field_definitions": {
+    "mode": "Investment mode: lump_sum or monthly.",
+    "return_type": "Return series: price or total_return.",
+    "period_years": "Holding period in years.",
+    "start": "Start month in YYYY-MM format.",
+    "end": "End month in YYYY-MM format.",
+    "nasdaq100": "NASDAQ-100 return percentage for the row.",
+    "sp500": "S&P 500 return percentage for the row.",
+    "months": "Holding period length in months."
+  },
+  "caveats": [
+    "Historical comparison only; not investment advice.",
+    "Taxes, fees, foreign exchange effects, and transaction costs are excluded.",
+    "Price return excludes dividends.",
+    "Total-return coverage differs by source; read /api/source-notes.json before using total-return data."
+  ],
+  "endpoints": [
+    {
+      "path": "/api/README.md",
+      "format": "text/markdown",
+      "description": "Static API usage notes."
+    },
+    {
+      "path": "/api/summary.json",
+      "format": "application/json",
+      "description": "Project summary and endpoint list."
+    },
+    {
+      "path": "/api/metadata.json",
+      "format": "application/json",
+      "description": "Dataset metadata and field definitions."
+    },
+    {
+      "path": "/api/source-notes.json",
+      "format": "application/json",
+      "description": "Source coverage and limitations."
+    },
+    {
+      "path": "/api/comparison-data.json",
+      "format": "application/json",
+      "description": "Chart-ready comparison rows grouped by return type, investment mode, and holding period."
+    }
+  ]
+}

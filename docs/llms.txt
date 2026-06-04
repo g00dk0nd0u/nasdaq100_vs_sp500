@@ -1,0 +1,23 @@
+# NASDAQ-100 vs S&P 500 Quarterly Start Comparison
+
+This GitHub Pages site compares historical NASDAQ-100 and S&P 500 returns by quarterly start month.
+
+## Main page
+
+- `/` - Interactive visualization for lump-sum and monthly investing comparisons.
+
+## Machine-readable data and documentation
+
+- `/api/README.md` - How to read the static API files.
+- `/api/metadata.json` - Dataset metadata, fields, caveats, and available endpoints.
+- `/api/summary.json` - Short machine-readable summary of the project and endpoint list.
+- `/api/source-notes.json` - Source coverage and limitations for total-return data.
+- `/api/comparison-data.json` - Chart-ready comparison rows grouped by return type, investment mode, and holding period.
+
+## Reading guidance for LLMs and API clients
+
+- Treat the page as a historical index-return comparison, not investment advice.
+- Price return excludes dividends.
+- Total return includes dividends where total-return index data is available.
+- Taxes, fees, foreign exchange effects, and transaction costs are not included.
+- Total-return source coverage differs between NASDAQ-100 and S&P 500, so always read `/api/source-notes.json` before comparing total-return results.

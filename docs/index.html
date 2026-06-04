@@ -3,7 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Compare historical NASDAQ-100 and S&amp;P 500 returns by quarterly start month for lump-sum and monthly investing.">
+<link rel="canonical" href="./">
+<link rel="alternate" type="text/plain" href="llms.txt" title="LLM reading guide">
+<link rel="alternate" type="application/json" href="api/metadata.json" title="Dataset metadata">
+<link rel="alternate" type="application/json" href="api/summary.json" title="Dataset summary">
+<link rel="alternate" type="application/json" href="api/comparison-data.json" title="Comparison data">
 <title>NASDAQ-100 vs S&P 500 | Quarterly Start Comparison</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "NASDAQ-100 vs S&P 500 Quarterly Start Comparison",
+  "description": "Historical comparison of NASDAQ-100 and S&P 500 returns by quarterly start month for lump-sum and monthly investing over 10, 15, 20, and 25 year horizons.",
+  "url": "./",
+  "isAccessibleForFree": true,
+  "measurementTechnique": "Monthly index-return comparison by quarterly start month",
+  "variableMeasured": [
+    "NASDAQ-100 return percentage",
+    "S&P 500 return percentage",
+    "investment mode",
+    "return type",
+    "start month",
+    "end month",
+    "holding period"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "api/metadata.json",
+      "name": "Dataset metadata"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "api/summary.json",
+      "name": "Dataset summary"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "api/source-notes.json",
+      "name": "Source notes"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "api/comparison-data.json",
+      "name": "Comparison data"
+    }
+  ]
+}
+</script>
 <style>
 :root {
   --bg: #f4f1ea;
@@ -56,6 +109,30 @@ h1 {
 }
 .explain-card strong {
   color: var(--ink);
+}
+
+.machine-summary {
+  background: rgba(255,253,248,.96);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin: 0 0 18px;
+  padding: 13px 15px;
+}
+.machine-summary h2 {
+  font-size: 17px;
+  margin: 0 0 7px;
+}
+.machine-summary p, .machine-summary ul {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 7px 0;
+}
+.machine-summary a {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+.machine-summary ul {
+  padding-left: 20px;
 }
 .section-title {
   margin: 24px 0 10px;
@@ -198,6 +275,21 @@ h2 {
     <div class="explain-card"><strong>Monthly Investing</strong><br>Invest $1 every month from the start month through the month before the end date. This is also known as dollar-cost averaging.</div>
     <div class="explain-card"><strong>Return Shown</strong><br>Price-index return by default. Use each card's TR switch to show total-return index data from 1999-04 onward. Tax, fees, and FX are not included.</div>
   </div>
+
+  <section class="machine-summary" aria-labelledby="machine-summary-title">
+    <h2 id="machine-summary-title">Machine-readable summary</h2>
+    <p>
+      This page compares NASDAQ-100 and S&amp;P 500 historical returns by quarterly start month for lump-sum and monthly investing over 10, 15, 20, and 25 year horizons.
+    </p>
+    <ul>
+      <li>Use <a href="llms.txt">llms.txt</a> for LLM reading guidance.</li>
+      <li>Use <a href="api/metadata.json">api/metadata.json</a> for dataset metadata and field definitions.</li>
+      <li>Use <a href="api/summary.json">api/summary.json</a> for a compact project summary.</li>
+      <li>Use <a href="api/source-notes.json">api/source-notes.json</a> before interpreting total-return data.</li>
+      <li>Use <a href="api/comparison-data.json">api/comparison-data.json</a> for chart-ready comparison rows.</li>
+    </ul>
+    <p>Historical comparison only; not investment advice. Taxes, fees, foreign exchange effects, and transaction costs are excluded.</p>
+  </section>
 
   <h2 class="section-title">Lump-Sum Investing</h2>
   <div class="cards">
