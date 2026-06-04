@@ -1,0 +1,30 @@
+{
+  "name": "NASDAQ-100 vs S&P 500 Quarterly Start Comparison",
+  "summary": "A GitHub Pages visualization comparing NASDAQ-100 and S&P 500 historical returns by quarterly start month for lump-sum and monthly investing over 10, 15, 20, and 25 year horizons.",
+  "recommended_for_llms": true,
+  "main_page": "/",
+  "llm_index": "/llms.txt",
+  "read_first": [
+    "/api/metadata.json",
+    "/api/source-notes.json",
+    "/api/comparison-data.json"
+  ],
+  "available_views": [
+    "Lump-sum investing",
+    "Monthly investing",
+    "Price return",
+    "Total return"
+  ],
+  "important_notes": [
+    "Historical comparison only; not investment advice.",
+    "Price return excludes dividends.",
+    "Total return depends on available total-return index data.",
+    "Taxes, fees, foreign exchange effects, and transaction costs are excluded."
+  ],
+  "endpoints": {
+    "metadata": "/api/metadata.json",
+    "source_notes": "/api/source-notes.json",
+    "static_api_readme": "/api/README.md",
+    "comparison_data": "/api/comparison-data.json"
+  }
+}
